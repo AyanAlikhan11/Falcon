@@ -1,5 +1,5 @@
 # Adaptive learning path
 
-A brief description of what this project does and who it's for.
+Welcome to AI learning Hub. This platform enhance youe learning ability and the use of AI as your peer.
 
 ## Table of content
