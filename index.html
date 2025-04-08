@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learning Hub</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background: #121212;
+      color: #ffffff;
+      padding-top: 80px;
+    }
+
+    /* Glassy Navbar */
+    .glass-navbar {
+      background: rgba(18, 18, 18, 0.7);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .glow-text {
+      color: #00e0ff;
+      font-size: 1.8rem;
+      font-weight: bold;
+      text-shadow: 0 0 10px rgba(0, 224, 255, 0.5), 0 0 20px rgba(0, 224, 255, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .glow-text:hover {
+      transform: scale(1.05);
+    }
+
+    .cool-link {
+      color: #e0e0e0 !important;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    .cool-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      display: block;
+      background: #00e0ff;
+      transition: width 0.3s;
+      bottom: 0;
+      left: 0;
+    }
+
+    .cool-link:hover::after {
+      width: 100%;
+    }
+
+    .cool-link:hover {
+      color: #00e0ff !important;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 100px 20px 80px;
+      background: linear-gradient(135deg, #1a1a1a, #181818);
+      animation: floatHero 6s ease-in-out infinite;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #00e0ff;
+      text-shadow: 0 0 10px rgba(0, 224, 255, 0.4);
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-top: 15px;
+      color: #ccc;
+    }
+
+    .hero .btn-get-started {
+      margin-top: 30px;
+      padding: 12px 30px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #fff;
+      background: #00e0ff;
+      border: none;
+      border-radius: 30px;
+      box-shadow: 0 0 20px rgba(0, 224, 255, 0.5);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .hero .btn-get-started:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 30px rgba(0, 224, 255, 0.7);
+    }
+
+    @keyframes floatHero {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* Cards Section */
+    .card-container {
+      padding: 60px 15px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .feature-card {
+      background: #1e1e1e;
+      border-radius: 16px;
+      padding: 30px;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0, 224, 255, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 24px rgba(0, 224, 255, 0.3);
+    }
+
+    .feature-card h3 {
+      color: #00e0ff;
+      margin-bottom: 15px;
+    }
+
+    .feature-card p {
+      color: #ccc;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar/Header -->
+  <nav class="navbar navbar-expand-lg fixed-top glass-navbar shadow">
+    <div class="container">
+      <a class="navbar-brand glow-text" href="#">Learning Hub</a>
+      <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link cool-link" href="#features">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link cool-link" href="#">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link cool-link" href="#">Login</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Supercharge Your Learning</h1>
+    <p>AI-powered learning experiences tailored just for you.</p>
+    <button class="btn btn-get-started" onclick="scrollToFeatures()">Get Started</button>
+  </section>
+
+  <!-- Feature Cards -->
+  <div id="features" class="container card-container">
+    <div class="feature-card">
+      <h3>Adaptive Learning</h3>
+      <p>Personalized learning paths that adjust based on your strengths and weaknesses.</p>
+    </div>
+    <div class="feature-card">
+      <h3>AI Tutor</h3>
+      <p>Get instant help and explanations with our intelligent AI-powered tutor.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Interactive Quizzes</h3>
+      <p>Test your knowledge with engaging quizzes and real-time feedback.</p>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function scrollToFeatures() {
+      document.getElementById("features").scrollIntoView({ behavior: "smooth" });
+    }
+  </script>
+</body>
+</html>
