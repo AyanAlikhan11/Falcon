@@ -1,463 +1,414 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personalized Learning Hub</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-/* Global Styles */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #000;
-    color: #21bbef;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learning Hub</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background: #121212;
+      color: #ffffff;
+      padding-top: 80px;
+    }
 
+    .glass-navbar {
+      background: rgba(18, 18, 18, 0.7);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
 
-/* Neon Scrollbar */
-::-webkit-scrollbar {
-    width: 10px;
-}
-::-webkit-scrollbar-track {
-    background: #0a0a0a;
-}
-::-webkit-scrollbar-thumb {
-    background: #00bfff;
-    border-radius: 5px;
-}
-::-webkit-scrollbar-thumb:hover {
-    background: #1e90ff;
-}
+    .glow-text {
+      color: #00e0ff;
+      font-size: 1.8rem;
+      font-weight: bold;
+      text-shadow: 0 0 10px rgba(0, 224, 255, 0.5), 0 0 20px rgba(0, 224, 255, 0.3);
+      transition: transform 0.3s ease;
+    }
 
-/* Navbar */
-.navbar {
-    background-color: #0a0a0a !important;
-    border-bottom: 1px solid #c3dbe6;
-    margin-bottom: 0;
-    box-shadow: 0 0 10px #0b0b0b;
-}
+    .glow-text:hover {
+      transform: scale(1.05);
+    }
 
-.navbar-nav .nav-link {
-    color: #00bfff !important;
-    transition: color 0.3s ease;
-    text-shadow: 0 0 6px #00bfff;
-}
+    .cool-link {
+      color: #e0e0e0 !important;
+      position: relative;
+      transition: color 0.3s ease;
+    }
 
-.navbar-nav .nav-link:hover {
-    color: #1e90ff !important;
-    text-shadow: 0 0 12px #1e90ff;
-}
+    .cool-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      display: block;
+      background: #00e0ff;
+      transition: width 0.3s;
+      bottom: 0;
+      left: 0;
+    }
 
-/* Hero Section */
-.hero-section {
-    background: linear-gradient(135deg, #0d0d0d, #050505);
-    color: #00bfff;
-    text-align: center;
-    padding: 70px 20px;
-    text-shadow: 0 0 12px #00bfff;
-    border-bottom: 2px solid #1e90ff;
-    box-shadow: 0 0 30px #00bfff33;
-}
+    .cool-link:hover::after {
+      width: 100%;
+    }
 
-/* Cards */
-.card {
-    margin: 20px 0;
-    background-color: #0d0d0d;
-    color: #00bfff;
-    border: 1px solid #1e90ff;
-    border-radius: 10px;
-    box-shadow: 0 0 15px #00bfff44;
-    transition: all 0.4s ease;
-    backdrop-filter: blur(5px);
-}
+    .cool-link:hover {
+      color: #00e0ff !important;
+    }
 
-.card:hover {
-    transform: scale(1.03);
-    box-shadow: 0 0 25px #00bfff, 0 0 15px #1e90ff;
-}
+    .hero {
+      text-align: center;
+      padding: 100px 20px 80px;
+      background: linear-gradient(135deg, #1a1a1a, #181818);
+      animation: floatHero 6s ease-in-out infinite;
+    }
 
-/* Footer */
-footer {
-    text-align: center;
-    padding: 15px;
-    background: #0a0a0a;
-    color: #00bfff;
-    border-top: 1px solid #1e90ff;
-    flex-shrink: 0;
-    box-shadow: 0 -3px 15px #00bfff22;
-}
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #00e0ff;
+      text-shadow: 0 0 10px rgba(0, 224, 255, 0.4);
+    }
 
-/* Chat Container */
-.chat-container {
-    max-width: 700px;
-    margin: 50px auto;
-    padding: 30px;
-    background-color: #0f0f0f;
-    color: #00bfff;
-    border-radius: 12px;
-    border: 1px solid #1e90ff;
-    box-shadow: 0 0 25px #00bfff;
-}
+    .hero p {
+      font-size: 1.2rem;
+      margin-top: 15px;
+      color: #ccc;
+    }
 
-/* Chat Box */
-.chat-box {
-    max-height: 400px;
-    overflow-y: auto;
-    margin-bottom: 20px;
-    background-color: #000;
-    padding: 15px;
-    border: 1px solid #00bfff;
-    border-radius: 6px;
-}
+    .hero .btn-get-started {
+      margin-top: 30px;
+      padding: 12px 30px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #fff;
+      background: #00e0ff;
+      border: none;
+      border-radius: 30px;
+      box-shadow: 0 0 20px rgba(0, 224, 255, 0.5);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
 
-/* User & AI Messages */
-.user-msg, .ai-msg {
-    padding: 10px 15px;
-    margin-bottom: 12px;
-    border-radius: 8px;
-    font-weight: 500;
-    animation: fadeIn 0.4s ease-in;
-}
+    .hero .btn-get-started:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 30px rgba(0, 224, 255, 0.7);
+    }
 
-.user-msg {
-    text-align: right;
-    background-color: #111;
-    box-shadow: 0 0 10px #00bfff;
-}
+    @keyframes floatHero {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
 
-.ai-msg {
-    text-align: left;
-    background-color: #1a1a1a;
-    box-shadow: 0 0 10px #1e90ff;
-}
+    .card-container {
+      padding: 60px 15px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
 
-/* Spinner */
-.spinner-border {
-    width: 1.5rem;
-    height: 1.5rem;
-    border-width: 0.2rem;
-    border-color: #00bfff transparent #00bfff transparent;
-    animation: spin 1s linear infinite;
-}
+    .feature-card {
+      background: #1e1e1e;
+      border-radius: 16px;
+      padding: 30px;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0, 224, 255, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
 
-/* Content Wrapper */
-.content-wrapper {
-    flex-grow: 1;
-}
+    .feature-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 24px rgba(0, 224, 255, 0.3);
+    }
 
-/* Inputs */
-input, .form-control {
-    background-color: #0f0f0f;
-    color: #00bfff;
-    border: 1px solid #1e90ff;
-    border-radius: 6px;
-}
+    .feature-card h3 {
+      color: #00e0ff;
+      margin-bottom: 15px;
+    }
 
-input:focus, .form-control:focus {
-    background-color: #0f0f0f;
-    color: #00bfff;
-    box-shadow: 0 0 15px #00bfff;
-    outline: none;
-}
+    .feature-card p {
+      color: #ccc;
+      font-size: 1rem;
+    }
 
-/* Buttons */
-.btn-primary, .btn-success, .btn-secondary, .btn-info {
-    background-color: #00bfff;
-    border: none;
-    color: #000;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 0 10px #00bfff;
-}
+    #quiz-section h2 {
+      color: #00e0ff;
+    }
 
-.btn:hover {
-    background-color: #1e90ff;
-    box-shadow: 0 0 15px #1e90ff;
-    color: #000;
-}
+    #quiz-section .quiz-options label {
+      display: block;
+      margin: 5px 0;
+    }
 
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-    </style>
+    #quiz-section .bg-dark {
+      background: #1e1e1e !important;
+    }
+  </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">LearningHub</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#quiz">Interactive Quiz</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <div class="hero-section">
-        <h1>Welcome to Personalized Learning Hub</h1>
-        <p>Learn at your own pace with AI-powered tools</p>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top glass-navbar shadow">
+    <div class="container">
+      <a class="navbar-brand glow-text" href="#">Learning Hub</a>
+      <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link cool-link" href="#features">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link cool-link" href="#">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link cool-link" href="#">Login</a>
+          </li>
+        </ul>
+      </div>
     </div>
+  </nav>
 
-    <div class="content-wrapper">
-        <div class="container" id="features">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card">
-                        <a href="#adaptiveLearningPaths" style="text-decoration: none; color: inherit;">
-                            <div class="card-body">
-                                <h5 class="card-title">Adaptive Learning Paths</h5>
-                                <p class="card-text">Tailored learning experiences based on your progress and interests.</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <a href="javascript:void(0);" onclick="showAITutorPage()" style="text-decoration: none; color: inherit;">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">AI Tutors</h5>
-                                <p class="card-text">Get instant help and feedback from AI-driven tutors.</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4">
-                    <a href="javascript:void(0);" onclick="showQuizPage()" style="text-decoration: none; color: inherit;">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Interactive Quizzes</h5>
-                                <p class="card-text">Engage with quizzes that adapt to your skill level and provide instant feedback.</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Supercharge Your Learning</h1>
+    <p>AI-powered learning experiences tailored just for you.</p>
+    <button class="btn btn-get-started" onclick="scrollToFeatures()">Get Started</button>
+  </section>
 
-        <div class="container" id="quiz" style="display: none;">
-            <h2 class="mt-4">Interactive Quiz</h2>
-            <p>Test your knowledge with a quick quiz!</p>
-            <form id="quizForm">
-                <div class="mb-3">
-                    <label for="question1" class="form-label">1. What is the capital of France?</label>
-                    <input type="text" class="form-control" id="question1" placeholder="Your answer here">
-                </div>
-                <div class="mb-3">
-                    <label for="question2" class="form-label">2. Who developed the theory of relativity?</label>
-                    <input type="text" class="form-control" id="question2" placeholder="Your answer here">
-                </div>
-                <div class="mb-3">
-                    <label for="question3" class="form-label">3. What is the largest planet in our solar system?</label>
-                    <input type="text" class="form-control" id="question3" placeholder="Your answer here">
-                </div>
-                <div class="mb-3">
-                    <label for="question4" class="form-label">4. What is the chemical symbol for water?</label>
-                    <input type="text" class="form-control" id="question4" placeholder="Your answer here">
-                </div>
-                <div class="mb-3">
-                    <label for="question5" class="form-label">5. Who painted the Mona Lisa?</label>
-                    <input type="text" class="form-control" id="question5" placeholder="Your answer here">
-                </div>
-                <div class="mb-3">
-                    <label for="question6" class="form-label">6. What is the smallest prime number?</label>
-                    <input type="text" class="form-control" id="question6" placeholder="Your answer here">
-                </div>
-                <div class="mb-3">
-                    <label for="question7" class="form-label">7. What is the hardest natural substance on Earth?</label>
-                    <input type="text" class="form-control" id="question7" placeholder="Your answer here">
-                </div>
-                <div class="mb-3">
-                    <label for="question8" class="form-label">8. What is the largest mammal?</label>
-                    <input type="text" class="form-control" id="question8" placeholder="Your answer here">
-                </div>
-                <div class="mb-3">
-                    <label for="question9" class="form-label">9. What is the chemical formula for methane?</label>
-                    <input type="text" class="form-control" id="question9" placeholder="Your answer here">
-                </div>
-                <div class="mb-3">
-                    <label for="question10" class="form-label">10. Who was the first president of the United States?</label>
-                    <input type="text" class="form-control" id="question10" placeholder="Your answer here">
-                </div>
-                <div class="mb-3">
-                    <label for="question11" class="form-label">11. What is the speed of light in vacuum (in meters per second)?</label>
-                    <input type="text" class="form-control" id="question11" placeholder="Your answer here">
-                </div>
-                <div class="mb-3">
-                    <label for="question12" class="form-label">12. In what year did the Titanic sink?</label>
-                    <input type="text" class="form-control" id="question12" placeholder="Your answer here">
-                </div>
-                <button type="button" class="btn btn-success" onclick="checkAnswers()">Submit</button>
-            </form>
-            <div id="quizFeedback" class="mt-3"></div>
-            <div id="scoreCard" class="mt-3"></div>
-        </div>
-
-        <!-- Adaptive Learning Paths Section -->
-        <div class="container" id="adaptiveLearningPaths">
-            <h2 class="mt-4">Adaptive Learning Paths</h2>
-            <p>Personalize your learning journey with tailored paths and recommendations.</p>
-            <div class="mb-3">
-                <label for="goalsInput" class="form-label">Set Your Learning Goals:</label>
-                <input type="text" class="form-control" id="goalsInput" placeholder="Enter your goals">
-                <button class="btn btn-primary mt-2" onclick="setGoals()">Save Goals</button>
-            </div>
-            <div class="mb-3">
-                <label for="progressInput" class="form-label">Update Your Progress:</label>
-                <input type="text" class="form-control" id="progressInput" placeholder="Enter your progress">
-                <button class="btn btn-secondary mt-2" onclick="updateProgress()">Update Progress</button>
-            </div>
-            <div class="mb-3">
-                <h5>Content Recommendations:</h5>
-                <div id="recommendations"></div>
-                <button class="btn btn-info mt-2" onclick="getRecommendations()">Get Recommendations</button>
-            </div>
-            <div class="mb-3">
-                <h5>Real-time Analytics:</h5>
-                <div id="analytics"></div>
-                <button class="btn btn-success mt-2" onclick="getAnalytics()">View Analytics</button>
-            </div>
-        </div>
-
-        <!-- AI Tutor Page -->
-        <div id="ai-tutor-page" class="container chat-container" style="display: none;">
-            <h2>AI Tutor</h2>
-            <div class="chat-box" id="chatContent"></div>
-            <div class="input-group">
-                <input type="text" class="form-control" id="chatInput" placeholder="Type your message...">
-                <button class="btn btn-primary" onclick="sendMessage()">Send</button>
-            </div>
-        </div>
+  <!-- Feature Cards -->
+  <div id="features" class="container card-container">
+    <div class="feature-card">
+      <h3>AI Tutor</h3>
+      <p>Get instant help and explanations with our intelligent AI-powered tutor.</p>
     </div>
+    <div class="feature-card" onclick="showQuizSection()">
+      <h3>Interactive Quizzes</h3>
+      <p>Test your knowledge with engaging quizzes and real-time feedback.</p>
+    </div>
+    
 
-    <footer>
-        <p>&copy; 2025 Personalized Learning Hub. All rights reserved.</p>
-    </footer>
+  <!-- Quiz Section -->
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <div id="quiz-section" class="container mt-5">
+      <h2 class="text-center mb-4">Quiz Library</h2>
+    
+      <!-- Quiz 1 -->
+      <div class="mb-4 p-4 bg-dark rounded shadow-sm">
+        <h5>Quiz 1: What does HTML stand for?</h5>
+        <div class="quiz-options">
+          <label><input type="radio" name="quiz1" value="A" /> Hyper Text Markup Language</label>
+          <label><input type="radio" name="quiz1" value="B" /> Home Tool Markup Language</label>
+          <label><input type="radio" name="quiz1" value="C" /> Hyperlinks and Text Markup Language</label>
+        </div>
+        
+        <div id="quiz-result-1" class="mt-2"></div>
+      </div>
+    
+      <!-- Quiz 2 -->
+      <div class="mb-4 p-4 bg-dark rounded shadow-sm">
+        <h5>Quiz 2: What is the correct syntax to output "Hello World" in Python?</h5>
+        <div class="quiz-options">
+          <label><input type="radio" name="quiz2" value="A" /> echo "Hello World"</label>
+          <label><input type="radio" name="quiz2" value="B" /> print("Hello World")</label>
+          <label><input type="radio" name="quiz2" value="C" /> console.log("Hello World")</label>
+        </div>
+       
+        <div id="quiz-result-2" class="mt-2"></div>
+      </div>
+    
+      <!-- Quiz 3 -->
+      <div class="mb-4 p-4 bg-dark rounded shadow-sm">
+        <h5>Quiz 3: Which tag is used to create a hyperlink in HTML?</h5>
+        <div class="quiz-options">
+          <label><input type="radio" name="quiz3" value="A" /> &lt;link&gt;</label>
+          <label><input type="radio" name="quiz3" value="B" /> &lt;a&gt;</label>
+          <label><input type="radio" name="quiz3" value="C" /> &lt;href&gt;</label>
+        </div>
+
+        <div id="quiz-result-3" class="mt-2"></div>
+      </div>
+    
+      <!-- Quiz 4 -->
+      <div class="mb-4 p-4 bg-dark rounded shadow-sm">
+        <h5>Quiz 4: What does CSS stand for?</h5>
+        <div class="quiz-options">
+          <label><input type="radio" name="quiz4" value="A" /> Computer Style Sheets</label>
+          <label><input type="radio" name="quiz4" value="B" /> Colorful Style Syntax</label>
+          <label><input type="radio" name="quiz4" value="C" /> Cascading Style Sheets</label>
+        </div>
+      
+        <div id="quiz-result-4" class="mt-2"></div>
+      </div>
+    </div>
+    
+
+  <!-- Add other quizzes similarly -->
+
+  <button class="btn btn-info mt-3" onclick="calculateScore()">Submit All</button>
+</div>
+
+
+    <!-- Add more quizzes here -->
     <script>
-        // Function to switch between pages
-        function showAITutorPage() {
-            document.getElementById('quiz').style.display = 'none';
-            document.getElementById('adaptiveLearningPaths').style.display = 'none';
-            document.getElementById('ai-tutor-page').style.display = 'block';
-        }
-
-        function showQuizPage() {
-            document.getElementById('ai-tutor-page').style.display = 'none';
-            document.getElementById('adaptiveLearningPaths').style.display = 'none';
-            document.getElementById('quiz').style.display = 'block';
-        }
-
-        // AI Tutor Interaction (Simulated)
-        function sendMessage() {
-            const userMessage = document.getElementById('chatInput').value.trim();
-            if (userMessage === "") return; // Prevent sending empty message
-            const chatContent = document.getElementById('chatContent');
-            const userMsg = document.createElement('div');
-            userMsg.classList.add('user-msg');
-            userMsg.textContent = `You: ${userMessage}`;
-            chatContent.appendChild(userMsg);
-            document.getElementById('chatInput').value = '';
-
-            // Simulate AI response
-            const aiResponse = document.createElement('div');
-            aiResponse.classList.add('ai-msg');
-            aiResponse.textContent = `AI: I see you asked about "${userMessage}". How can I assist you further?`;
-            chatContent.appendChild(aiResponse);
-
-            chatContent.scrollTop = chatContent.scrollHeight; // Scroll to the latest message
-        }
-
-        // Adaptive Learning Paths Logic
-        function setGoals() {
-            const goals = document.getElementById('goalsInput').value;
-            if (goals.trim() === "") {
-                alert("Please enter your learning goals.");
-                return;
-            }
-            localStorage.setItem('learningGoals', goals);
-            alert("Goals saved successfully!");
-        }
-
-        function updateProgress() {
-            const progress = document.getElementById('progressInput').value;
-            if (progress.trim() === "") {
-                alert("Please enter your progress.");
-                return;
-            }
-            localStorage.setItem('learningProgress', progress);
-            alert("Progress updated successfully!");
-        }
-
-        function getRecommendations() {
-            const goals = localStorage.getItem('learningGoals');
-            const recommendations = document.getElementById('recommendations');
-            if (!goals) {
-                recommendations.innerHTML = "Please set your learning goals first!";
-            } else {
-                recommendations.innerHTML = `Based on your goals, we recommend the following content: <strong>${goals}</strong>`;
-            }
-        }
-
-        function getAnalytics() {
-            const progress = localStorage.getItem('learningProgress');
-            const analytics = document.getElementById('analytics');
-            if (!progress) {
-                analytics.innerHTML = "Please update your progress to see analytics!";
-            } else {
-                analytics.innerHTML = `Your current progress is: <strong>${progress}</strong>`;
-            }
-        }
-
-        // Quiz Functions
-        function checkAnswers() {
-            const correctAnswers = {
-                question1: 'Paris',
-                question2: 'Einstein',
-                question3: 'Jupiter',
-                question4: 'H2O',
-                question5: 'Leonardo da Vinci',
-                question6: '2',
-                question7: 'Diamond',
-                question8: 'Blue Whale',
-                question9: 'CH4',
-                question10: 'George Washington',
-                question11: '299792458',
-                question12: '1912'
-            };
-            let score = 0;
-            let feedback = '';
-            for (let question in correctAnswers) {
-                const userAnswer = document.getElementById(question).value.trim();
-                if (userAnswer.toLowerCase() === correctAnswers[question].toLowerCase()) {
-                    score++;
-                } else {
-                    feedback += `<p class="text-danger">Question ${question.split('question')[1]}: Incorrect. The correct answer is ${correctAnswers[question]}</p>`;
-                }
-            }
-            document.getElementById('quizFeedback').innerHTML = feedback;
-            document.getElementById('scoreCard').innerHTML = `<h4>Your Score: ${score}/12</h4>`;
-        }
+      function scrollToFeatures() {
+        document.getElementById("features").scrollIntoView({ behavior: "smooth" });
+      }
+    
+      function showQuizSection() {
+        document.getElementById("quiz-section").scrollIntoView({ behavior: "smooth" });
+      }
     </script>
+    
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function scrollToFeatures() {
+      document.getElementById("features").scrollIntoView({ behavior: "smooth" });
+    }
+
+    function scrollToQuizzes() {
+      document.getElementById("quiz-section").scrollIntoView({ behavior: "smooth" });
+    }
+
+ 
+  
+  function checkAnswer1() {
+    const answer = document.querySelector('input[name="quiz1"]:checked');
+    const result = document.getElementById("quiz-result-1");
+    if (!answer) {
+      result.textContent = "Please select an answer.";
+      result.style.color = "orange";
+    } else if (answer.value === "A") {
+      result.textContent = "Correct!";
+      result.style.color = "lightgreen";
+    } else {
+      result.textContent = "Incorrect. Try again!";
+      result.style.color = "tomato";
+    }
+  }
+
+  function checkAnswer2() {
+    const answer = document.querySelector('input[name="quiz2"]:checked');
+    const result = document.getElementById("quiz-result-2");
+    if (!answer) {
+      result.textContent = "Please select an answer.";
+      result.style.color = "orange";
+    } else if (answer.value === "B") {
+      result.textContent = "Correct!";
+      result.style.color = "lightgreen";
+    } else {
+      result.textContent = "Incorrect. Try again!";
+      result.style.color = "tomato";
+    }
+  }
+
+  function checkAnswer3() {
+    const answer = document.querySelector('input[name="quiz3"]:checked');
+    const result = document.getElementById("quiz-result-3");
+    if (!answer) {
+      result.textContent = "Please select an answer.";
+      result.style.color = "orange";
+    } else if (answer.value === "B") {
+      result.textContent = "Correct!";
+      result.style.color = "lightgreen";
+    } else {
+      result.textContent = "Incorrect. Try again!";
+      result.style.color = "tomato";
+    }
+  }
+
+  function checkAnswer4() {
+    const answer = document.querySelector('input[name="quiz4"]:checked');
+    const result = document.getElementById("quiz-result-4");
+    if (!answer) {
+      result.textContent = "Please select an answer.";
+      result.style.color = "orange";
+    } else if (answer.value === "C") {
+      result.textContent = "Correct!";
+      result.style.color = "lightgreen";
+    } else {
+      result.textContent = "Incorrect. Try again!";
+      result.style.color = "tomato";
+    }
+  }
+
+
+    
+  </script>
+  <script>
+    // Individual quiz checkers (you already have these)
+  
+    function calculateScore() {
+      let score = 0;
+      let total = 4;
+  
+      // Answers
+      const answers = {
+        quiz1: "A",
+        quiz2: "B",
+        quiz3: "B",
+        quiz4: "C"
+      };
+  
+      for (let i = 1; i <= total; i++) {
+        const selected = document.querySelector(`input[name="quiz${i}"]:checked`);
+        if (selected && selected.value === answers[`quiz${i}`]) {
+          score++;
+        }
+      }
+  
+      const finalScore = document.getElementById("final-score");
+      finalScore.innerText = `You scored ${score} out of ${total}`;
+      finalScore.style.color = score === total ? "lightgreen" : "yellow";
+    }
+  </script>
+  <script>
+    function calculateScore() {
+      let score = 0;
+      let total = 4;
+  
+      const answers = {
+        quiz1: "A",
+        quiz2: "B",
+        quiz3: "B",
+        quiz4: "C"
+      };
+  
+      for (let i = 1; i <= total; i++) {
+        const selected = document.querySelector(`input[name="quiz${i}"]:checked`);
+        if (selected && selected.value === answers[`quiz${i}`]) {
+          score++;
+        }
+      }
+  
+      const scoreText = `You scored ${score} out of ${total}`;
+      document.getElementById("scoreResult").innerText = scoreText;
+  
+      const modal = new bootstrap.Modal(document.getElementById('scoreModal'));
+      modal.show();
+    }
+  </script>
+<!-- Score Modal -->
+<div class="modal fade" id="scoreModal" tabindex="-1" aria-labelledby="scoreModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-dark text-white border-info">
+      <div class="modal-header border-info">
+        <h5 class="modal-title" id="scoreModalLabel">Your Score</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center fs-4" id="scoreResult">
+        <!-- Score will be inserted here -->
+      </div>
+      <div class="modal-footer border-info">
+        <button type="button" class="btn btn-info" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 </body>
 </html>
