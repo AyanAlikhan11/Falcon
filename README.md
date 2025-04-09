@@ -1,4 +1,4 @@
-# Adaptive learning path
+# Learning Hub
 
 ## Description:
 Learning Hub is a modern, AI-powered web platform designed to supercharge the learning experience for students and professionals.
