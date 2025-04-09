@@ -115,3 +115,35 @@ function calculateScore() {
   scoreModal.show();
 }
 
+// Function to scroll to "Watch Your Progress" section
+function scrollToProgress() {
+  document.getElementById('progress-section').scrollIntoView({ behavior: 'smooth' });
+}
+
+// Sample data for progress chart (you can modify this based on your progress)
+const ctx = document.getElementById('progressChart').getContext('2d');
+const progressChart = new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: ['HTML', 'CSS', 'JavaScript'],
+    datasets: [{
+      label: 'Progress',
+      data: [70, 50, 30],  // Percentage progress for each subject
+      backgroundColor: 'rgba(75, 192, 192, 0.2)',
+      borderColor: 'rgba(75, 192, 192, 1)',
+      borderWidth: 1
+    }]
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true,
+        max: 100
+      }
+    }
+  }
+});
+
+
+
+

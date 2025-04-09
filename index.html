@@ -6,6 +6,8 @@
   <title>Learning Hub</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
 <body>
 
@@ -38,17 +40,63 @@
     <button class="btn btn-get-started" onclick="scrollToFeatures()">Get Started</button>
   </section>
 
-  <!-- Feature Cards -->
-  <div id="features" class="container card-container">
-   <div class="feature-card" onclick="scrollToAITutor()">
-      <h3>AI Tutor</h3>
-      <p>Get instant help and explanations with our intelligent AI-powered tutor.</p>
-    </div>
-    <div class="feature-card" onclick="showQuizSection()">
-      <h3>Interactive Quizzes</h3>
-      <p>Test your knowledge with engaging quizzes and real-time feedback.</p>
-    </div>
+ <!-- Feature Cards -->
+<div id="features" class="container card-container">
+  <div class="feature-card" onclick="scrollToAITutor()">
+    <h3>AI Tutor</h3>
+    <p>Get instant help and explanations with our intelligent AI-powered tutor.</p>
   </div>
+  <div class="feature-card" onclick="showQuizSection()">
+    <h3>Interactive Quizzes</h3>
+    <p>Test your knowledge with engaging quizzes and real-time feedback.</p>
+  </div>
+  <div class="feature-card" onclick="scrollToProgress()">
+    <h3>Watch Your Progress</h3>
+    <p>Track your learning progress and see your improvement over time.</p>
+  </div>
+</div>
+
+<!-- Watch Your Progress Section -->
+<section id="progress-section" class="container mt-5">
+  <h2 class="text-center text-white mb-4">Track Your Progress</h2>
+  
+  <!-- Subject and Syllabus List -->
+  <div class="subject-list">
+    <h4>Subjects</h4>
+    <ul id="subjects">
+      <li>
+        <strong>HTML</strong> - Chapter 1: Introduction to HTML
+        <div class="progress-bar" id="html-progress">
+          <div class="progress" style="width: 70%"></div>
+        </div>
+      </li>
+      <li>
+        <strong>CSS</strong> - Chapter 1: Introduction to CSS
+        <div class="progress-bar" id="css-progress">
+          <div class="progress" style="width: 50%"></div>
+        </div>
+      </li>
+      <li>
+        <strong>JavaScript</strong> - Chapter 1: Basics of JavaScript
+        <div class="progress-bar" id="js-progress">
+          <div class="progress" style="width: 30%"></div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  
+  <!-- Progress Chart (using a simple bar chart) -->
+  <div id="progress-chart">
+    <h4>Learning Progress</h4>
+    <canvas id="progressChart" width="400" height="200"></canvas>
+  </div>
+</section>
+
+
+
+
+
+  
 
   <!-- Quiz Section -->
   <div id="quiz-section" class="container mt-5">
