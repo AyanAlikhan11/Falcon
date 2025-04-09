@@ -137,4 +137,90 @@ body {
   #quiz-section .bg-dark {
     background: #1e1e1e !important;
   }
-  
+  /* ===== Auth Modal Styling (Login & Sign In) ===== */
+
+.modal-content {
+  background-color: #1e1e1e;
+  border-radius: 15px;
+  border: 1px solid #333;
+  color: white;
+}
+
+.modal-header {
+  border-bottom: 1px solid #444;
+}
+
+.modal-title {
+  color: #00f7ff;
+  font-weight: 600;
+}
+
+.modal-body label {
+  color: #ccc;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.form-control {
+  background-color: #2c2c2c;
+  border: 1px solid #555;
+  color: #fff;
+  border-radius: 8px;
+}
+
+.form-control::placeholder {
+  color: #aaa;
+}
+
+.form-control:focus {
+  border-color: #00f7ff;
+  box-shadow: 0 0 5px rgba(0, 247, 255, 0.6);
+  background-color: #2c2c2c;
+  color: white;
+}
+
+.modal-footer {
+  border-top: 1px solid #444;
+}
+
+.btn-auth {
+  background: #00f7ff;
+  color: black;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  transition: 0.3s;
+}
+
+.btn-auth:hover {
+  background-color: #00c2cc;
+  transform: scale(1.03);
+}
+
+/* Close Button */
+.btn-close {
+  filter: invert(1);
+}
+#scoreModal .modal-content {
+  border-radius: 15px;
+  border: 1px solid #00f7ff;
+  background-color: #121212;
+  color: white;
+}
+
+#scoreModal h4 {
+  color: #00f7ff;
+  font-weight: 700;
+}
+
+.chat-box {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  max-height: 300px;           /* or any height you prefer */
+  overflow-y: auto;            /* adds scroll when needed */
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #fff;      /* make sure it's not transparent */
+  color: #000;                 /* ensure text is visible */
+}
