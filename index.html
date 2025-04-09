@@ -4,148 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Learning Hub</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <style>
-    body {
-      background: #121212;
-      color: #ffffff;
-      padding-top: 80px;
-    }
-
-    .glass-navbar {
-      background: rgba(18, 18, 18, 0.7);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
-    .glow-text {
-      color: #00e0ff;
-      font-size: 1.8rem;
-      font-weight: bold;
-      text-shadow: 0 0 10px rgba(0, 224, 255, 0.5), 0 0 20px rgba(0, 224, 255, 0.3);
-      transition: transform 0.3s ease;
-    }
-
-    .glow-text:hover {
-      transform: scale(1.05);
-    }
-
-    .cool-link {
-      color: #e0e0e0 !important;
-      position: relative;
-      transition: color 0.3s ease;
-    }
-
-    .cool-link::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      display: block;
-      background: #00e0ff;
-      transition: width 0.3s;
-      bottom: 0;
-      left: 0;
-    }
-
-    .cool-link:hover::after {
-      width: 100%;
-    }
-
-    .cool-link:hover {
-      color: #00e0ff !important;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 100px 20px 80px;
-      background: linear-gradient(135deg, #1a1a1a, #181818);
-      animation: floatHero 6s ease-in-out infinite;
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      font-weight: bold;
-      color: #00e0ff;
-      text-shadow: 0 0 10px rgba(0, 224, 255, 0.4);
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      margin-top: 15px;
-      color: #ccc;
-    }
-
-    .hero .btn-get-started {
-      margin-top: 30px;
-      padding: 12px 30px;
-      font-size: 1.1rem;
-      font-weight: 500;
-      color: #fff;
-      background: #00e0ff;
-      border: none;
-      border-radius: 30px;
-      box-shadow: 0 0 20px rgba(0, 224, 255, 0.5);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .hero .btn-get-started:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 30px rgba(0, 224, 255, 0.7);
-    }
-
-    @keyframes floatHero {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-
-    .card-container {
-      padding: 60px 15px;
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      flex-wrap: wrap;
-    }
-
-    .feature-card {
-      background: #1e1e1e;
-      border-radius: 16px;
-      padding: 30px;
-      width: 300px;
-      text-align: center;
-      box-shadow: 0 8px 20px rgba(0, 224, 255, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
-    }
-
-    .feature-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 24px rgba(0, 224, 255, 0.3);
-    }
-
-    .feature-card h3 {
-      color: #00e0ff;
-      margin-bottom: 15px;
-    }
-
-    .feature-card p {
-      color: #ccc;
-      font-size: 1rem;
-    }
-
-    #quiz-section h2 {
-      color: #00e0ff;
-    }
-
-    #quiz-section .quiz-options label {
-      display: block;
-      margin: 5px 0;
-    }
-
-    #quiz-section .bg-dark {
-      background: #1e1e1e !important;
-    }
-  </style>
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
@@ -158,15 +18,9 @@
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link cool-link" href="#features">Features</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link cool-link" href="#">Pricing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link cool-link" href="#">Login</a>
-          </li>
+          <li class="nav-item"><a class="nav-link cool-link" href="#features">Features</a></li>
+          <li class="nav-item"><a class="nav-link cool-link" href="#">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link cool-link" href="#">Login</a></li>
         </ul>
       </div>
     </div>
@@ -189,226 +43,62 @@
       <h3>Interactive Quizzes</h3>
       <p>Test your knowledge with engaging quizzes and real-time feedback.</p>
     </div>
-    
+  </div>
 
   <!-- Quiz Section -->
+  <div id="quiz-section" class="container mt-5">
+    <h2 class="text-center mb-4">Quiz Library</h2>
 
-    <div id="quiz-section" class="container mt-5">
-      <h2 class="text-center mb-4">Quiz Library</h2>
-    
-      <!-- Quiz 1 -->
-      <div class="mb-4 p-4 bg-dark rounded shadow-sm">
-        <h5>Quiz 1: What does HTML stand for?</h5>
-        <div class="quiz-options">
-          <label><input type="radio" name="quiz1" value="A" /> Hyper Text Markup Language</label>
-          <label><input type="radio" name="quiz1" value="B" /> Home Tool Markup Language</label>
-          <label><input type="radio" name="quiz1" value="C" /> Hyperlinks and Text Markup Language</label>
-        </div>
-        
-        <div id="quiz-result-1" class="mt-2"></div>
+    <!-- Quiz 1 -->
+    <div class="mb-4 p-4 bg-dark rounded shadow-sm">
+      <h5>Quiz 1: What does HTML stand for?</h5>
+      <div class="quiz-options">
+        <label><input type="radio" name="quiz1" value="A" /> Hyper Text Markup Language</label>
+        <label><input type="radio" name="quiz1" value="B" /> Home Tool Markup Language</label>
+        <label><input type="radio" name="quiz1" value="C" /> Hyperlinks and Text Markup Language</label>
       </div>
-    
-      <!-- Quiz 2 -->
-      <div class="mb-4 p-4 bg-dark rounded shadow-sm">
-        <h5>Quiz 2: What is the correct syntax to output "Hello World" in Python?</h5>
-        <div class="quiz-options">
-          <label><input type="radio" name="quiz2" value="A" /> echo "Hello World"</label>
-          <label><input type="radio" name="quiz2" value="B" /> print("Hello World")</label>
-          <label><input type="radio" name="quiz2" value="C" /> console.log("Hello World")</label>
-        </div>
-       
-        <div id="quiz-result-2" class="mt-2"></div>
-      </div>
-    
-      <!-- Quiz 3 -->
-      <div class="mb-4 p-4 bg-dark rounded shadow-sm">
-        <h5>Quiz 3: Which tag is used to create a hyperlink in HTML?</h5>
-        <div class="quiz-options">
-          <label><input type="radio" name="quiz3" value="A" /> &lt;link&gt;</label>
-          <label><input type="radio" name="quiz3" value="B" /> &lt;a&gt;</label>
-          <label><input type="radio" name="quiz3" value="C" /> &lt;href&gt;</label>
-        </div>
-
-        <div id="quiz-result-3" class="mt-2"></div>
-      </div>
-    
-      <!-- Quiz 4 -->
-      <div class="mb-4 p-4 bg-dark rounded shadow-sm">
-        <h5>Quiz 4: What does CSS stand for?</h5>
-        <div class="quiz-options">
-          <label><input type="radio" name="quiz4" value="A" /> Computer Style Sheets</label>
-          <label><input type="radio" name="quiz4" value="B" /> Colorful Style Syntax</label>
-          <label><input type="radio" name="quiz4" value="C" /> Cascading Style Sheets</label>
-        </div>
-      
-        <div id="quiz-result-4" class="mt-2"></div>
-      </div>
+      <div id="quiz-result-1" class="mt-2"></div>
     </div>
-    
 
-  <!-- Add other quizzes similarly -->
-
-  <button class="btn btn-info mt-3" onclick="calculateScore()">Submit All</button>
-</div>
-
-
-    <!-- Add more quizzes here -->
-    <script>
-      function scrollToFeatures() {
-        document.getElementById("features").scrollIntoView({ behavior: "smooth" });
-      }
-    
-      function showQuizSection() {
-        document.getElementById("quiz-section").scrollIntoView({ behavior: "smooth" });
-      }
-    </script>
-    
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    function scrollToFeatures() {
-      document.getElementById("features").scrollIntoView({ behavior: "smooth" });
-    }
-
-    function scrollToQuizzes() {
-      document.getElementById("quiz-section").scrollIntoView({ behavior: "smooth" });
-    }
-
- 
-  
-  function checkAnswer1() {
-    const answer = document.querySelector('input[name="quiz1"]:checked');
-    const result = document.getElementById("quiz-result-1");
-    if (!answer) {
-      result.textContent = "Please select an answer.";
-      result.style.color = "orange";
-    } else if (answer.value === "A") {
-      result.textContent = "Correct!";
-      result.style.color = "lightgreen";
-    } else {
-      result.textContent = "Incorrect. Try again!";
-      result.style.color = "tomato";
-    }
-  }
-
-  function checkAnswer2() {
-    const answer = document.querySelector('input[name="quiz2"]:checked');
-    const result = document.getElementById("quiz-result-2");
-    if (!answer) {
-      result.textContent = "Please select an answer.";
-      result.style.color = "orange";
-    } else if (answer.value === "B") {
-      result.textContent = "Correct!";
-      result.style.color = "lightgreen";
-    } else {
-      result.textContent = "Incorrect. Try again!";
-      result.style.color = "tomato";
-    }
-  }
-
-  function checkAnswer3() {
-    const answer = document.querySelector('input[name="quiz3"]:checked');
-    const result = document.getElementById("quiz-result-3");
-    if (!answer) {
-      result.textContent = "Please select an answer.";
-      result.style.color = "orange";
-    } else if (answer.value === "B") {
-      result.textContent = "Correct!";
-      result.style.color = "lightgreen";
-    } else {
-      result.textContent = "Incorrect. Try again!";
-      result.style.color = "tomato";
-    }
-  }
-
-  function checkAnswer4() {
-    const answer = document.querySelector('input[name="quiz4"]:checked');
-    const result = document.getElementById("quiz-result-4");
-    if (!answer) {
-      result.textContent = "Please select an answer.";
-      result.style.color = "orange";
-    } else if (answer.value === "C") {
-      result.textContent = "Correct!";
-      result.style.color = "lightgreen";
-    } else {
-      result.textContent = "Incorrect. Try again!";
-      result.style.color = "tomato";
-    }
-  }
-
-
-    
-  </script>
-  <script>
-    // Individual quiz checkers (you already have these)
-  
-    function calculateScore() {
-      let score = 0;
-      let total = 4;
-  
-      // Answers
-      const answers = {
-        quiz1: "A",
-        quiz2: "B",
-        quiz3: "B",
-        quiz4: "C"
-      };
-  
-      for (let i = 1; i <= total; i++) {
-        const selected = document.querySelector(`input[name="quiz${i}"]:checked`);
-        if (selected && selected.value === answers[`quiz${i}`]) {
-          score++;
-        }
-      }
-  
-      const finalScore = document.getElementById("final-score");
-      finalScore.innerText = `You scored ${score} out of ${total}`;
-      finalScore.style.color = score === total ? "lightgreen" : "yellow";
-    }
-  </script>
-  <script>
-    function calculateScore() {
-      let score = 0;
-      let total = 4;
-  
-      const answers = {
-        quiz1: "A",
-        quiz2: "B",
-        quiz3: "B",
-        quiz4: "C"
-      };
-  
-      for (let i = 1; i <= total; i++) {
-        const selected = document.querySelector(`input[name="quiz${i}"]:checked`);
-        if (selected && selected.value === answers[`quiz${i}`]) {
-          score++;
-        }
-      }
-  
-      const scoreText = `You scored ${score} out of ${total}`;
-      document.getElementById("scoreResult").innerText = scoreText;
-  
-      const modal = new bootstrap.Modal(document.getElementById('scoreModal'));
-      modal.show();
-    }
-  </script>
-<!-- Score Modal -->
-<div class="modal fade" id="scoreModal" tabindex="-1" aria-labelledby="scoreModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content bg-dark text-white border-info">
-      <div class="modal-header border-info">
-        <h5 class="modal-title" id="scoreModalLabel">Your Score</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+    <!-- Quiz 2 -->
+    <div class="mb-4 p-4 bg-dark rounded shadow-sm">
+      <h5>Quiz 2: What is the correct syntax to output "Hello World" in Python?</h5>
+      <div class="quiz-options">
+        <label><input type="radio" name="quiz2" value="A" /> echo "Hello World"</label>
+        <label><input type="radio" name="quiz2" value="B" /> print("Hello World")</label>
+        <label><input type="radio" name="quiz2" value="C" /> console.log("Hello World")</label>
       </div>
-      <div class="modal-body text-center fs-4" id="scoreResult">
-        <!-- Score will be inserted here -->
+      <div id="quiz-result-2" class="mt-2"></div>
+    </div>
+
+    <!-- Quiz 3 -->
+    <div class="mb-4 p-4 bg-dark rounded shadow-sm">
+      <h5>Quiz 3: Which tag is used to create a hyperlink in HTML?</h5>
+      <div class="quiz-options">
+        <label><input type="radio" name="quiz3" value="A" /> &lt;link&gt;</label>
+        <label><input type="radio" name="quiz3" value="B" /> &lt;a&gt;</label>
+        <label><input type="radio" name="quiz3" value="C" /> &lt;href&gt;</label>
       </div>
-      <div class="modal-footer border-info">
-        <button type="button" class="btn btn-info" data-bs-dismiss="modal">Close</button>
+      <div id="quiz-result-3" class="mt-2"></div>
+    </div>
+
+    <!-- Quiz 4 -->
+    <div class="mb-4 p-4 bg-dark rounded shadow-sm">
+      <h5>Quiz 4: What does CSS stand for?</h5>
+      <div class="quiz-options">
+        <label><input type="radio" name="quiz4" value="A" /> Computer Style Sheets</label>
+        <label><input type="radio" name="quiz4" value="B" /> Colorful Style Syntax</label>
+        <label><input type="radio" name="quiz4" value="C" /> Cascading Style Sheets</label>
       </div>
+      <div id="quiz-result-4" class="mt-2"></div>
     </div>
   </div>
-</div>
 
+  <div class="text-center">
+    <button class="btn btn-info mt-3" onclick="calculateScore()">Submit All</button>
+  </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
