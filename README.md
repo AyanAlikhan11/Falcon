@@ -47,6 +47,8 @@ A score system keeps track of how well the user is doing.
 
 At the end, users see a final score.
 
+A Progress Graph Chart which shows % of progress 
+
 ## Tech Stack Used
 Tool/Language	Purpose
 HTML	Structure of the web page
@@ -68,3 +70,5 @@ JavaScript	Adds interactivity – quiz logic, feedback, score
 📱 Mobile responsive design
 
 📊 Final score display
+
+📈 Progress Graph Chart
