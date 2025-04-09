@@ -222,5 +222,5 @@ body {
   padding: 10px;
   border: 1px solid #ccc;
   background-color: #fff;      /* make sure it's not transparent */
-  color: #000;                 /* ensure text is visible */
+  color: #f5f1f1;                 /* ensure text is visible */
 }

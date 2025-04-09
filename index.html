@@ -103,6 +103,23 @@
     <button class="btn btn-info mt-3" onclick="calculateScore()">Submit All</button>
   </div>
   <!-- Score Modal -->
+<!-- Score Modal -->
+<div class="modal fade" id="scoreModal" tabindex="-1" aria-labelledby="scoreModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content bg-dark text-white">
+      <div class="modal-header">
+        <h5 class="modal-title" id="scoreModalLabel">Your Quiz Score</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <h3 id="scoreMessage"></h3>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
   <!-- Sign In Modal -->
@@ -155,17 +172,17 @@
     </div>
   </div>
   <!-- AI Tutor Section -->
-  <section id="ai-tutor" class="container mt-5">
-    <h2 class="text-center mb-4">AI Tutor</h2>
-    <div class="card bg-dark text-white shadow-lg p-4">
-      <div id="chatBox" class="chat-box mb-3 p-3 border rounded">
-        <div class="text-muted text-center">Ask me anything about coding, HTML, CSS, JS, Python...</div>
-      </div>
-      <div class="input-group">
-        <input type="text" id="userInput" class="form-control bg-light" placeholder="Type your question..." />
-        <button class="btn btn-primary" onclick="askAITutor()">Ask</button>
-      </div>
+<section id="ai-tutor" class="container mt-5">
+  <h2 class="text-center text-white mb-4">AI Tutor</h2>
+  <div class="card bg-dark text-white shadow-lg p-4">
+    <div id="chatBox" class="chat-box mb-3 p-3 border rounded" style="height: 300px; overflow-y: auto; background-color: #1e1e1e;">
+      <div class="text-muted text-center">Ask me anything about coding, HTML, CSS, JS, Python...</div>
     </div>
+    <div class="input-group">
+      <input type="text" id="userInput" class="form-control bg-light" placeholder="Type your question..." />
+      <button class="btn btn-primary" onclick="askAITutor()">Ask</button>
+    </div>
+  </div>
 </section>
 
 
