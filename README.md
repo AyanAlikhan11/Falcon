@@ -1,7 +1,7 @@
 # Learning Hub
 
 ## Description:
-Learning Hub is a visually appealing, beginner-friendly quiz platform designed to help users learn and test their knowledge in an enjoyable way. The project features an AI-inspired tutor card that welcomes and motivates the user, and includes interactive multiple-choice quizzes that provide instant feedback. It combines beautiful UI animations, responsive design, and glassmorphism with real quiz logic to make learning both stylish and effective.
+Learning Hub is a visually appealing, beginner-friendly quiz platform designed to help users learn and test their knowledge in an enjoyable way. The project features an AI-inspired tutor card that welcomes and motivates the user, and continuously learns from user interactions, adapting the difficulty level and type of questions over time. It also provides instant feedback on quiz results and tracks progress, allowing users to identify weak areas and improve effectively. It combines beautiful UI animations, responsive design, and glassmorphism with real quiz logic to make learning both stylish and effective.
 
 ## What does each part mean?
 ### “Beginner-friendly quiz platform”
