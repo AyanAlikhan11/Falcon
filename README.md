@@ -72,3 +72,10 @@ JavaScript	Adds interactivity – quiz logic, feedback, score
 📊 Final score display
 
 📈 Progress Graph Chart
+
+## How it works
+
+Our system allows users to effortlessly upload or input textbook chapters and syllabi. Once the content is entered, AI algorithms process the text to identify and extract key concepts, topics, and subtopics.The AI analyzes and restructures this information to create quiz.
+
+
+
