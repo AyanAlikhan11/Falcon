@@ -75,6 +75,8 @@ JavaScript	Adds interactivity – quiz logic, feedback, score
 
 ## How it works
 
+After sign up a user can log in to our website once it done a get started button is shown by clicking on that user can go to the AI tutor, Interactive Quizzes, Watch Your Progress by selecting it user will be able to solve its problem and the graph meter notifies the user how his/her progress is taking place.
+
 Our system allows users to effortlessly upload or input textbook chapters and syllabi. Once the content is entered, AI algorithms process the text to identify and extract key concepts, topics, and subtopics.The AI analyzes and restructures this information to create quiz.
 
 
