@@ -220,22 +220,83 @@
     </div>
   </div>
   <!-- AI Tutor Section -->
+<!-- AI Tutor Chat Section -->
 <section id="ai-tutor" class="container mt-5">
   <h2 class="text-center text-white mb-4">AI Tutor</h2>
   <div class="card bg-dark text-white shadow-lg p-4">
-    <div id="chatBox" class="chat-box mb-3 p-3 border rounded" style="height: 300px; overflow-y: auto; background-color: #1e1e1e;">
+    <div id="chatBox" class="chat-box mb-3 p-3 border rounded" style="height: 300px; overflow-y: auto; background-color: #121212;">
       <div class="text-muted text-center">Ask me anything about coding, HTML, CSS, JS, Python...</div>
     </div>
     <div class="input-group">
-      <input type="text" id="userInput" class="form-control bg-light" placeholder="Type your question..." />
-      <button class="btn btn-primary" onclick="askAITutor()">Ask</button>
+      <!-- 👇 Fixed input styling -->
+      <input type="text" id="userInput" 
+             class="form-control" 
+             placeholder="Type your question..." 
+             style="background-color: #fff; color: #000;" 
+             onkeydown="if(event.key==='Enter') askAITutor()" />
+      <button class="btn btn-info text-dark fw-bold" onclick="askAITutor()">Ask</button>
     </div>
   </div>
 </section>
+
+<script>
+  function askAITutor() {
+    const input = document.getElementById("userInput");
+    const chatBox = document.getElementById("chatBox");
+    const userText = input.value.trim();
+
+    if (userText === "") return;
+
+    // Display user message
+    const userMsg = document.createElement("div");
+    userMsg.className = "text-end mb-2";
+    userMsg.innerHTML = `<span class="badge bg-info text-dark p-2">${userText}</span>`;
+    chatBox.appendChild(userMsg);
+    input.value = "";
+    chatBox.scrollTop = chatBox.scrollHeight;
+
+    // Simulated AI reply
+    setTimeout(() => {
+      const aiMsg = document.createElement("div");
+      aiMsg.className = "text-start mb-2";
+      aiMsg.innerHTML = `<span class="badge bg-secondary text-light p-2">Let me help you with that...</span>`;
+      chatBox.appendChild(aiMsg);
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }, 600);
+  }
+</script>
 
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="script.js"></script>
+
+
+
+  <footer class="learning-footer bg-dark text-white mt-5">
+    <div class="container py-4">
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <h5>Learning Hub</h5>
+          <p>Your gateway to mastering HTML, CSS, JavaScript, and more!</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h6>Quick Links</h6>
+          <ul class="list-unstyled">
+            <li><a href="#courses" class="text-white text-decoration-none">Courses</a></li>
+            <li><a href="#quizzes" class="text-white text-decoration-none">Interactive Quizzes</a></li>
+            <li><a href="#ai-tutor" class="text-white text-decoration-none">AI Tutor</a></li>
+            <li><a href="#contact" class="text-white text-decoration-none">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-3">
+        
+        </div>
+      </div>
+      <hr class="bg-light" />
+      <p class="text-center mb-0">&copy; 2025 Learning Hub. Built with ❤️ for curious minds.</p>
+    </div>
+  </footer>
+  
 </body>
 </html>

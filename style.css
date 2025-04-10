@@ -214,16 +214,7 @@ body {
   font-weight: 700;
 }
 
-.chat-box {
-  font-size: 0.95rem;
-  line-height: 1.5;
-  max-height: 300px;           /* or any height you prefer */
-  overflow-y: auto;            /* adds scroll when needed */
-  padding: 10px;
-  border: 1px solid #ccc;
-  background-color: #fff;      /* make sure it's not transparent */
-  color: #f5f1f1;                 /* ensure text is visible */
-}
+
 /* Styling for the progress section */
 #progress-section {
   background-color: #2c3e50;
@@ -263,4 +254,92 @@ body {
 }
 
 
+/* AI Tutor Section */
+#ai-tutor {
+  margin-top: 3rem;
+}
+
+#ai-tutor .card {
+  background-color: #1c1c1c;
+  color: white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Chat Box */
+#chatBox {
+  height: 300px;
+  overflow-y: auto;
+  background-color: #121212;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 1rem;
+  font-size: 0.95rem;
+}
+
+/* Input field - visible text */
+#userInput {
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+  padding: 0.6rem;
+}
+
+/* Input placeholder */
+#userInput::placeholder {
+  color: #777;
+}
+
+/* Ask button */
+#ai-tutor .btn {
+  border-radius: 0 4px 4px 0;
+  font-weight: bold;
+  padding: 0.6rem 1rem;
+  background-color: #17a2b8;
+  color: #000;
+  border: none;
+}
+
+/* Messages */
+.text-start .badge,
+.text-end .badge {
+  font-size: 0.9rem;
+  padding: 0.5rem 0.75rem;
+}
+
+.text-end .badge {
+  background-color: #0dcaf0;
+  color: #000;
+}
+
+.text-start .badge {
+  background-color: #6c757d;
+  color: #fff;
+}
+  
+
+.learning-footer {
+  background-color: #111;
+  color: #ccc;
+  font-size: 14px;
+}
+
+.learning-footer h5,
+.learning-footer h6 {
+  color: #fff;
+}
+
+.learning-footer a:hover {
+  color: #00bcd4;
+}
+
+.learning-footer .social-icons a {
+  font-size: 18px;
+  margin-right: 10px;
+  transition: color 0.3s;
+}
+
+.learning-footer .social-icons a:hover {
+  color: #00bcd4;
+}
 
